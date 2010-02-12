@@ -67,4 +67,5 @@
 - (void)copyFilePath:(NSString*)filePath asKey:(NSString*)key withTimeoutInterval:(NSTimeInterval)timeoutInterval;	
 
 @property(nonatomic,assign) NSTimeInterval defaultTimeoutInterval; // Default is 1 day
+- (void)ignoreDefaultTimeoutInterval; // sets the defaultTimeoutInterval to far in the future
 @end

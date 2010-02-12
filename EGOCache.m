@@ -34,7 +34,7 @@
 	#define CHECK_FOR_EGOCACHE_PLIST() if([key isEqualToString:@"EGOCache.plist"]) return;
 #endif
 
-
+#define TIME_INTERVAL_FOR_DISTANT_FUTURE (NSTimeInterval)60*60*24*365*3
 
 static NSString* _EGOCacheDirectory;
 
@@ -101,6 +101,11 @@ static EGOCache* __instance;
 	}
 	
 	return self;
+}
+
+- (void)ignoreDefaultTimeoutInterval;
+{
+  self.defaultTimeoutInterval = TIME_INTERVAL_FOR_DISTANT_FUTURE;
 }
 
 - (void)clearCache {
